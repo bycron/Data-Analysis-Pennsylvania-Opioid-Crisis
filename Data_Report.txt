@@ -1,0 +1,4 @@
+Introduction
+
+1.1 Background
+  The state of Pennsylvania has struggled against opioid addiction in recent years. Between an increase in the availability of pharmaceutical opioid's and the extremely addictive nature of street drugs, such as heroin and fentanyl, opioid overdose is becoming more and more widespread. Opioid's can be powerful painkillers and offer many people relief when properly prescribed and dosed. However, the risk of even pharmaceutical opioid addiction is so great that many can get hooked within the first few doses. Opioid addiction is tough to overcome, but many don't get the chance. The risk of overdose is notably higher with opioid's, especially when fentanyl or heroin is involved. The aim of my project is to help shine a light on how widespread and dangerous opioid abuse is becoming in Pennsylvania, and hopefully find trends in the data to predict future at-risk demographics. 
