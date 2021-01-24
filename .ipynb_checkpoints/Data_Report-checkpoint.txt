@@ -1,0 +1,15 @@
+Introduction
+
+1.1 Background
+    The state of Pennsylvania has struggled against opioid addiction in recent years. Between an increase in the availability of pharmaceutical opioid's and the extremely addictive nature of street drugs, such as heroin and fentanyl, opioid overdose is becoming more and more widespread. Opioid's can be powerful painkillers and offer many people relief when properly prescribed and dosed. However, the risk of even pharmaceutical opioid addiction is so great that many can get hooked within the first few doses. Opioid addiction is tough to overcome, but many don't get the chance. The risk of overdose is notably higher with opioid's, especially when fentanyl or heroin is involved. The aim of my project is to help shine a light on how widespread and dangerous opioid abuse is becoming in Pennsylvania, and hopefully find trends in the data to predict future at-risk demographics. 
+  
+ 1.2 Problem
+     The aim of this analysis is to determine if characteristics of drug overdose patients can be used to predict future at-risk individuals. In analyzing the common drug types, age groups of patients, ethnicity and gender information, and survival rates of different counties in Pennsylvania, I hope to find correlations that can help shine light on how widespread and dangerous opioid abuse has become in the area.
+     
+1.3 Interest
+    My family recently lost a member due to opioid overdose and shook our world almost as much as Covid did. I want to try to honor them and also spread awareness of drug abuse and how close to home it can be, even if you can't see it clearly.
+     
+Data
+
+2.1 Data Sources
+    All of the open data used in this project is available to the public on the website https://data.pa.gov. The project contains data pertaining to medical records of overdose victims from the years 2018 to 2021. 
