@@ -1,0 +1,53 @@
+Introduction
+
+A.1 Background
+    The state of Pennsylvania has struggled against opioid addiction in recent years. Between an increase in the availability of pharmaceutical opioid's and the extremely addictive nature of street drugs, such as heroin and fentanyl, opioid overdose is becoming more and more widespread. Opioid's can be powerful painkillers and offer many people relief when properly prescribed and dosed. However, the risk of even pharmaceutical opioid addiction is so great that many can get hooked within the first few doses. Opioid addiction is tough to overcome, but many don't get the chance. The risk of overdose is notably higher with opioid's, especially when fentanyl or heroin is involved. The aim of my project is to help shine a light on how widespread and dangerous opioid abuse is becoming in Pennsylvania, and hopefully find trends in the data to predict future at-risk demographics. 
+  
+A.2 Problem
+     The aim of this analysis is to determine if characteristics of drug overdose patients can be used to predict future at-risk individuals. In analyzing the common drug types, age groups of patients, ethnicity and gender information, and survival rates of different counties in Pennsylvania, I hope to find correlations that can help shine light on how widespread and dangerous opioid abuse has become in the area.
+     
+A.3 Interest
+    My family recently lost a member due to opioid overdose and shook our world almost as much as Covid did. I want to try to honor them and also spread awareness of drug abuse and how close to home it can be, even if you can't see it clearly.
+     
+Data
+
+B.1 Data Sources
+    All of the open data used in this project is available to the public on the website https://data.pa.gov. The project contains data pertaining to medical records of overdose victims from the years 2018 to 2021. Additionally, the project uses a GeoJSON of Pennsylvania county lines to help visualize the data.
+    
+B.2 Data Cleansing 
+    The first step taken in cleansing the dataset was to drop columns in the dataframe that contained duplicate data. The columns pertaining to latitude and longitude data were repeated twice, with one set being labeled the victim's location and the other the incident's location. I decided to merge these as the data all pertains to victims who overdosed in hospital settings, and therefore all the data in both sets was mirrored. I dropped any columns related to dosage counts, as well as text data related to revival methods and outcomes. This was due to early feature selection and deciding to use data related to more generalized groups. The last step I took on the initial data was to rename a lot of the data columns to shorten and make the more clear. 
+    The first edits I made to the data involved reformatting data in each column categorically and parsing the data to category types. A lot of the analysis in this project is based on categorical data, so I encoded a lot of the text data into logical bins and groups. This mainly involved replacing Y and N strings with T or F strings. I also created a new age group to merge the 0-9 and 14-Oct data into one singular 0-14 age range. Finally, I added an ID column to better separate the initial dataframe.
+    
+B.3 Grouping
+    After renaming and encoding the data, I grouped the data by county, drug type, weekday, gender, coordinates, age range, and survival rates. I created new dataframes all based on these groups and their prevalence in each county of Pennsylvania. This involved taking the data and counting the amount of occurances for each categorical type. The new dataframes were also re-indexed and columns re-named for brevity.
+    
+Methodology
+
+C.1 Exploratory Analysis
+    To begin I noted the data types and split the data into new dataframes based on category. After splitting the data, I checked the value counts and totals for each column in my selected groups. I determined that survival rates, age group, and day of the week would be my areas of focus. For the survival data I was able to split it into three categories: survived, died, and unknown. For the age range data I split the categories into 8 groups and combined the data based on amounts in each group. For the weekday information I had to reindex the dataframe multiple times to get the weekdays to be in an acceptable order, by day! After the analysis of these groups I decided to also include the drug types in my exploration. I split the drug types into concise bins and decided not to sort the data to make the charts more impactful.
+    
+C.2 Charting and Plotting
+    I first visualized the survival rates using a pie chart to show overall rate of survival in Pennsylvania, by county. I used a list comprehension to set the sizes of the slivers and exploded the survived metric to add weight. For overdoses by day I decided to use a bar chart and had to re-arrange the data to have it in the correct weekday order. For the age group data I again used a bar chart and did not re-sort the values as the chart ended up being a very strong curve. Finally, for the drug type data I used a horizontal bar chart to represent the data in an easy to read format.
+    
+C.3 Mapping Occurances by County
+    The final step I used in visualizing the data was to create a choropleth map of Pennsylvanian counties and add overall survival rate by county as an overlay. I created a threshold scale and tweaked it to adjust the weight of each counties overdoses. I also decided on red-orange-yellow to show impact and elude to the dangerous nature of the data.
+
+Results
+
+    The survival data showed that nearly 75% of overdose patients survive, with 20% dying and roughly 5% whose outcome is unknown. 
+    
+    Age range data showed a steady curve up as the data approaches the 30-39 group, and then dips back down as it moves from there. 
+    
+    Weekday data pointed to Friday and Saturday as the common days for overdosing. Monday was the low-end with Wednesday close behind. 
+    
+    Drug type data showed that heroin overdosing occurs more than all other drug types combined. Fentanyl, a more powerful and therefore more dangerous form of heroin was second, however by quite a large margin. Behind fentanyl was 'Unknown', which means doctors and law enforcement could not determine the drug being overdosed on. 
+    
+    Finally, mapping the data onto the geojson showed that the southeastern quadrant of Pennsylvania has the highest overdose counts, with the outlier being Harrisburg in the southwestern quadrant. Allegheny county had the highest overdose rate in the time range, with 3357 occurances. This was followed by York and Bucks counties, with 2780 and 1946 incidents, respectively.
+
+Discussion
+    The data for age groups was the most surprising, showing that the majority of overdose incidents occur for individuals from the 30-39 age range. Personally, I believed the data would show that the 20-29 range was the highest risk, but the data proved to be almost like a standard deviation example. The survival rate data was very uplifting, showing a 75% survival rate among overdose incidents. However, the other way of saying that it a 25% dead or unknown rate. Data on the weekdays was as expected, with the weekends being the primary time for drug use and earlier in the weekday showing a decline. The drug types used were overwhelmingly skewed towards heroin abuse, but also shows an alerting amount of pharmaceutical drug overdose. The map of the county spread also shows that the southeastern part of Pennsylvania is very healvily encumbered with drug addiction. This is also expected, as the southeastern quadrant has some of the largest cities and is also close to Baltimore, Maryland, a known drug running capital in the northeast United States.
+    The data proves that there is a significant amount of heroin abuse and overdosing in Pennsylvania, but also shows surprising statistics about how overdosing is clustered in the south east of the state. I was surprised that the northeastern area wasn't more afflicted, knowing Luzerne to be an area with high amounts of drug use.
+
+Conclusion
+    Opioids, especially heroin, are very dangerous and addictive drugs. 23,708 overdose incidents were recorded over the span of 2018-2020, and from the data it is clear that the abuse of opioids has become overwhelming in parts of the state. The data proved a lot of my assumptions right, but a lot more wrong. I think it is pivotal to increase the awareness of this crisis and the affect drug abuse has on individuals and their families.
+    I spent a long time working on this project and will continue to work on it as I learn more on data science. I hope my late family member would be proud of this work, and I hope they are in a better place.  
